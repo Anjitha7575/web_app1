@@ -29,7 +29,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://anjitha7575.github.io/moviesdb/",
+  "homepage": "https://anjitha7575.github.io/web_app1/",
   "eslintConfig": {
     "extends": "react-app"
   },
