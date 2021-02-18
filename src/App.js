@@ -11,7 +11,7 @@ function App() {
           id="1"
           name="my_frame"
           title="Title"
-          src="https://app.forms.dev.repute.net/anjtest_dev/dev3"
+          src="https://app.forms.dev.repute.net/vogo/vogo"
           style={{ width: '100%', height: '100%', margin: '0px', padding: '0px' }}
           align="center"
           scrolling="yes"
