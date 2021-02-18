@@ -1,35 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ef16cfb0a44ce9e918c1ad9e5ac33046",
+    "revision": "45b2116fe28ea7c76049fd6f60d64844",
     "url": "/web_app1/index.html"
   },
   {
-    "revision": "ff217fa4b749e5d8ee4a",
-    "url": "/web_app1/static/css/2.65ee5370.chunk.css"
+    "revision": "f40ae80f7924c75ca530",
+    "url": "/web_app1/static/css/2.bd6dca27.chunk.css"
   },
   {
-    "revision": "7c8317bafbeb4b9a63ac",
-    "url": "/web_app1/static/css/main.703b242b.chunk.css"
+    "revision": "cd93782869f2b04d9c76",
+    "url": "/web_app1/static/css/main.24d47d1a.chunk.css"
   },
   {
-    "revision": "ff217fa4b749e5d8ee4a",
-    "url": "/web_app1/static/js/2.1bab0227.chunk.js"
+    "revision": "f40ae80f7924c75ca530",
+    "url": "/web_app1/static/js/2.bbaea8c0.chunk.js"
   },
   {
-    "revision": "cb4293a028d0175415ddb31dc1aaaefb",
-    "url": "/web_app1/static/js/2.1bab0227.chunk.js.LICENSE.txt"
+    "revision": "c64c486544348f10a6d6c716950bc223",
+    "url": "/web_app1/static/js/2.bbaea8c0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7c8317bafbeb4b9a63ac",
-    "url": "/web_app1/static/js/main.7aa8221b.chunk.js"
+    "revision": "cd93782869f2b04d9c76",
+    "url": "/web_app1/static/js/main.033c5925.chunk.js"
   },
   {
     "revision": "94b7b4061b3771a2adde",
     "url": "/web_app1/static/js/runtime-main.25229e30.js"
-  },
-  {
-    "revision": "5b1fe33d1621848930b98b0783ed56c9",
-    "url": "/web_app1/static/media/darkLoad.5b1fe33d.gif"
   },
   {
     "revision": "0cb5a5c0d251c109458c85c6afeffbaa",
@@ -90,17 +86,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ec763292e583294612f124c0b0def500",
     "url": "/web_app1/static/media/fa-solid-900.ec763292.svg"
-  },
-  {
-    "revision": "ef5a7b09cd1c5731f626d1b3b19e176e",
-    "url": "/web_app1/static/media/green.ef5a7b09.jpg"
-  },
-  {
-    "revision": "fe397bb90c18728223e7849913d558b2",
-    "url": "/web_app1/static/media/green1.fe397bb9.jpg"
-  },
-  {
-    "revision": "2a29441cae02fde5bdf1eca883125eb3",
-    "url": "/web_app1/static/media/moviedb.2a29441c.png"
   }
 ]);
