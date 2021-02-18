@@ -15,6 +15,7 @@ function App() {
           style={{ width: '100%', height: '100%', margin: '0px', padding: '0px' }}
           align="center"
           scrolling="yes"
+          allow="camera;microphone"
         ></iframe>
 
       </div>
