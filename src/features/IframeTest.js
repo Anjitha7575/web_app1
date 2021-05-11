@@ -15,7 +15,7 @@ function IframeTest(props) {
                     responseData: 'Response #' + ' session_timeout'
                 };
                 event.source.postMessage(obj, '*');
-                window.location.href = '/web_app1';
+                // window.location.href = '/web_app1';
             }
         },
         []
