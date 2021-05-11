@@ -26,7 +26,7 @@ function IframeTest(props) {
         return () =>
             window.removeEventListener("message", onMessageReceivedFromIframe);
     }, [onMessageReceivedFromIframe]);
-
+    return React.useMemo(()=> {
     return (
         <div class="iframe-container">
             <iframe
@@ -40,7 +40,7 @@ function IframeTest(props) {
                 allow="camera;microphone"
             ></iframe>
         </div>
-    );
+    )},[])
 }
 
 export default IframeTest;
