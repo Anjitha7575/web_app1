@@ -1,25 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
+import IframeTest from './features/IframeTest';
+import TextBtn from './features/TextBtn';
 // import Header from './features/Header/component';
 // import Dashboard from './features/Dashboard/container';
 
 function App() {
   return (
-    <div className="App">
-      <div class="iframe-container">
-        <iframe
-          id="1"
-          name="my_frame"
-          title="Title"
-          src="https://app.forms.dev.repute.net/vogo/vogo"
-          style={{ width: '100%', height: '100%', margin: '0px', padding: '0px' }}
-          align="center"
-          scrolling="yes"
-          allow="camera;microphone"
-        ></iframe>
-
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route component={IframeTest} path="/reputeiframe" exact />
+        <Route component={TextBtn} path="/web_app1" exact />
+      </Switch>
+    </Router>
   );
 }
 
