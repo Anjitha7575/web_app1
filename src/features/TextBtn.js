@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 let TextBtn = (props) => {
-    const [state, setState] = useState({ token: "", employerId: "", tid: "" , domain :""});
+    const [state, setState] = useState({ token: "", employerId: "", userId: "" , domain :""});
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -38,10 +38,10 @@ let TextBtn = (props) => {
                 <div style={{display: 'flex', margin: '10px'}}>
                     <label style={{width: '200px'}}>User Id :</label>
                     <input
-                        value={state.tid}
+                        value={state.userId}
                         type="text"
                         onChange={handleChange}
-                        name="tid"
+                        name="userId"
                     />
                 </div>
                 <div style={{display: 'flex', margin: '10px'}}>
@@ -63,7 +63,7 @@ let TextBtn = (props) => {
                     state: {
                         token: state.token,
                         employerId: state.employerId,
-                        tid: state.tid,
+                        userId: state.userId,
                         domain : state.domain
                     },
                 }}>Open Repute</Link></button>

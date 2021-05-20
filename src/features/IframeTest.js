@@ -33,7 +33,7 @@ function IframeTest(props) {
                 id="1"
                 name="my_frame"
                 title="Title"
-                src={`${_get(state, 'domain','https://app.greytip.qa.repute.net')}/mlogin?employerId=${_get(state, 'employerId', '5')}&token=${_get(state, 'token', 'npr7P8whB76XPI7Nsz0cIigj9DRjIJZt')}&tid=${_get(state, 'tid', '2')}`}
+                src={`${_get(state, 'domain','https://app.greytip.qa.repute.net')}/mlogin?employerId=${_get(state, 'employerId', '5')}&token=${_get(state, 'token', 'npr7P8whB76XPI7Nsz0cIigj9DRjIJZt')}&userId=${_get(state, 'userId', '2')}`}
                 style={{ width: '85%', height: '100%', margin: 'auto', display: 'flex', justifyContent: 'center' }}
                 align="center"
                 scrolling="yes"
