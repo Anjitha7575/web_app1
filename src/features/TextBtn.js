@@ -36,7 +36,7 @@ let TextBtn = (props) => {
                     />
                 </div>
                 <div style={{display: 'flex', margin: '10px'}}>
-                    <label style={{width: '200px'}}>Tenant Id :</label>
+                    <label style={{width: '200px'}}>User Id :</label>
                     <input
                         value={state.tid}
                         type="text"
