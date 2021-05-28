@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import _get from 'lodash/get';
 import { Link } from 'react-router-dom';
 
 let TextBtn = (props) => {
-    const [state, setState] = useState({ token: "", employerId: "", userId: "" , domain :""});
+    const [state, setState] = useState({ token: "", employerId: "", userId: "", domain: "" });
 
     const handleChange = e => {
         const { name, value } = e.target;
@@ -12,13 +13,16 @@ let TextBtn = (props) => {
         }));
     };
 
-
+    const openWin = () => {
+        let url = `${_get(state, 'domain', 'https://app.greytip.qa.repute.net')}/mlogin?employerId=${_get(state, 'employerId', '5')}&token=${_get(state, 'token', 'npr7P8whB76XPI7Nsz0cIigj9DRjIJZt')}&userId=${_get(state, 'userId', '2')}`
+        window.open(url, '_blank');
+    }
 
     return (
         <div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignContent:'center', justifyContent:'center' }}>
-                <div style={{display: 'flex', margin: '10px'}}>
-                    <label style={{width: '200px'}}>Token :</label>
+            <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', margin: '10px' }}>
+                    <label style={{ width: '200px' }}>Token :</label>
                     <input
                         value={state.token}
                         type="text"
@@ -26,8 +30,8 @@ let TextBtn = (props) => {
                         name="token"
                     />
                 </div>
-                <div style={{display: 'flex', margin: '10px'}}>
-                    <label style={{width: '200px'}}>Employer Id :</label>
+                <div style={{ display: 'flex', margin: '10px' }}>
+                    <label style={{ width: '200px' }}>Employer Id :</label>
                     <input
                         value={state.employerId}
                         type="text"
@@ -35,8 +39,8 @@ let TextBtn = (props) => {
                         name="employerId"
                     />
                 </div>
-                <div style={{display: 'flex', margin: '10px'}}>
-                    <label style={{width: '200px'}}>User Id :</label>
+                <div style={{ display: 'flex', margin: '10px' }}>
+                    <label style={{ width: '200px' }}>User Id :</label>
                     <input
                         value={state.userId}
                         type="text"
@@ -44,8 +48,8 @@ let TextBtn = (props) => {
                         name="userId"
                     />
                 </div>
-                <div style={{display: 'flex', margin: '10px'}}>
-                    <label style={{width: '300px'}}>Test Domain <span style={{fontSize:'8px'}}>(eg: `https://app.greytip.qa.repute.net`) </span> :</label>
+                <div style={{ display: 'flex', margin: '10px' }}>
+                    <label style={{ width: '300px' }}>Test Domain <span style={{ fontSize: '8px' }}>(eg: `https://app.greytip.qa.repute.net`) </span> :</label>
                     <input
                         value={state.domain}
                         type="text"
@@ -54,9 +58,9 @@ let TextBtn = (props) => {
                     />
                 </div>
             </div>
-            <br/>
-            <br/>
-            <br/>
+            <br />
+            <br />
+            <br />
             <button>
                 <Link to={{
                     pathname: `/reputeiframe`,
@@ -64,9 +68,14 @@ let TextBtn = (props) => {
                         token: state.token,
                         employerId: state.employerId,
                         userId: state.userId,
-                        domain : state.domain
+                        domain: state.domain
                     },
-                }}>Open Repute</Link></button>
+                }}>Open In Iframe</Link></button>
+            <br />
+            <br />
+            <br />
+            <button onClick={openWin}>Open In New Window</button>
+
         </div>
     );
 }
