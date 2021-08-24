@@ -25,12 +25,13 @@ let TextBtn = (props) => {
                     <label style={{ width: '200px' }}>Token :</label>
                     <input
                         value={state.token}
+                        style={{width: '250px'}}
                         type="text"
                         onChange={handleChange}
                         name="token"
                     />
                 </div>
-                <div style={{ display: 'flex', margin: '10px' }}>
+                {/* <div style={{ display: 'flex', margin: '10px' }}>
                     <label style={{ width: '200px' }}>Employer Id :</label>
                     <input
                         value={state.employerId}
@@ -47,11 +48,12 @@ let TextBtn = (props) => {
                         onChange={handleChange}
                         name="userId"
                     />
-                </div>
+                </div> */}
                 <div style={{ display: 'flex', margin: '10px' }}>
-                    <label style={{ width: '300px' }}>Test Domain <span style={{ fontSize: '8px' }}>(eg: `https://app.greytip.qa.repute.net`) </span> :</label>
+                    <label style={{ width: '300px' }}>Test Domain <span style={{ fontSize: '8px' }}>(eg: `https://app.greytip.qa.repute.net`, `http://localhost:3000`) </span> :</label>
                     <input
                         value={state.domain}
+                        style={{width: '250px'}}
                         type="text"
                         onChange={handleChange}
                         name="domain"

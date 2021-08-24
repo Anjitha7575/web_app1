@@ -1,43 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/moviedb_icon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#FFFFFF" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <title>Page Title</title>
+</head>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<body onload="javascript: parentInitialize();">
+  <style>
+    html,
+    body,
+    #page {
+      height: 100%;
+    }
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    #msgform{
+      color: green;
+      font-size: 14px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 10px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 10px;
+      border: 1px solid #888;
+      width: 35%;
+      height: 600px;
+    }
+
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .iframe-container {
+      margin: 0 auto;
+      max-width: 100%;
+      width: 100%;
+      height: 90%;
+    }
+
+    @media only screen and (max-width: 992px) {
+      .iframe-container {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .iframe-container {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  </style>
+  <button id="myBtn">Open Modal</button>
+  <div id="msgform"></div>
+
+  <div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="popup" class="iframe-container">
+        <iframe id="my_iframe" align="center" scrolling="yes" allow="camera;microphone"
+          src="https://app.forms.qa.repute.net/limecars/limecars"
+          style="width: 100%; height: 100%; margin: 0px; padding: 0px;"></iframe>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript">
+    var modal = document.getElementById("myModal");
+
+    var btn = document.getElementById("myBtn");
+
+    var span = document.getElementsByClassName("close")[0];
+    function hide() {
+      var modal = document.getElementById('myModal');
+      modal.style.display = "none";
+    }
+    function parentInitialize() {
+      var count = 0;
+      window.addEventListener('message', function (e) {
+
+        if (e.data.type === 'iFrameRequest_Repute') {
+          var obj = {
+            type: 'parentResponse',
+            responseData: 'Response #' + count++
+          };
+          e.source.postMessage(obj, '*');
+          console.log('Whole data', e.data);
+
+          if (e.data.status === "form_success") {
+            console.log('Status', e.data.status);
+            document.getElementById("msgform").innerHTML = "Form Submitted Successfully!";
+            hide();
+          }
+        }
+      }, false)
+    }
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+
 </html>
